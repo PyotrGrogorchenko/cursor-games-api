@@ -6,7 +6,7 @@ services:
     container_name: api
     image: pepegrigorchenko/cursor-games-api
     build:
-      context: https://github.com/PyotrGrogorchenko/cursor-games-api.git#main:Dockerfile.dev
+      context: https://github.com/PyotrGrogorchenko/cursor-games-api.git#main:docker/dev
       #context: .
       #dockerfile: ./Dockerfile.dev
     ports:
