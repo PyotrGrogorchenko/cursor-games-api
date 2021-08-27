@@ -1,14 +1,12 @@
 import { Sequelize, SequelizeOptions } from 'sequelize-typescript'
 
-require('dotenv').config({ path: process.env.NODE_ENV === 'development' ? '.env-dev' : '.env' })
-
 const sequelizeOptions: SequelizeOptions = {
   port: 5432,
   dialect: 'postgres',
   dialectOptions: {
-    ssl: {
-      rejectUnauthorized: false
-    }
+    // ssl: {
+    //   rejectUnauthorized: false
+    // }
   },
   pool: {
     max: 5,
