@@ -3,12 +3,7 @@ import { Sequelize, SequelizeOptions } from 'sequelize-typescript'
 require('dotenv').config({ path: process.env.NODE_ENV === 'development' ? '.env-dev' : '.env' })
 
 const sequelizeOptions: SequelizeOptions = {
-  host: process.env.DB_HOST,
   port: 5432,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_DATABASE,
-
   dialect: 'postgres',
   dialectOptions: {
     ssl: {
@@ -23,4 +18,4 @@ const sequelizeOptions: SequelizeOptions = {
   }
 }
 
-export const sequelize: Sequelize = new Sequelize(sequelizeOptions)
+export const sequelize: Sequelize = new Sequelize(String(process.env.DATABASE_URL), sequelizeOptions)
