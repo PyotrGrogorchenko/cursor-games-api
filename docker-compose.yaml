@@ -8,7 +8,7 @@ services:
     build:
       context: https://github.com/PyotrGrogorchenko/cursor-games-api.git#main:.
       #context: .
-      #dockerfile: ./Dockerfile.dev
+      dockerfile: ./Dockerfile-prod
     ports:
       - 8000:8000
     #environment:
