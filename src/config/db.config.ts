@@ -1,13 +1,10 @@
 import { Sequelize, SequelizeOptions } from 'sequelize-typescript'
 
+require('dotenv').config({ path: process.env.NODE_ENV === 'development' ? 'env/.env-dev' : 'env/.env' })
+
 const sequelizeOptions: SequelizeOptions = {
   port: 5432,
   dialect: 'postgres',
-  // dialectOptions: {
-  //   ssl: {
-  //     rejectUnauthorized: false
-  //   }
-  // },
   pool: {
     max: 5,
     min: 0,
@@ -15,6 +12,9 @@ const sequelizeOptions: SequelizeOptions = {
     idle: 10000
   }
 }
+
+console.log('process.env.NODE_ENV', process.env.NODE_ENV)
+console.log('process.env.DATABASE_URL', process.env.DATABASE_URL)
 
 if (process.env.NODE_ENV === 'production') {
   sequelizeOptions.dialectOptions = {
