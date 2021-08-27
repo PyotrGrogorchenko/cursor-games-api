@@ -24,11 +24,10 @@ services:
     container_name: api_db
     hostname: db
     image: postgres:13.3-alpine
-    environment_file:
-      - env/.env-dev
-    #environment:
-      #POSTGRES_DB: "db"
-      #POSTGRES_HOST_AUTH_METHOD: "trust"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: games
     ports:
       - 5432:5432
     #volumes:
