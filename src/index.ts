@@ -19,9 +19,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 db.sequelize.sync()
-  .then(() => {
-    console.log('Sequelize.sync OK'.green)
-  })
+  .then(() => {console.log('Sequelize.sync OK'.green)})
   .catch((err: any) => console.log('Sequelize.sync ERROR'.red, err))
 
 app.get('/', (req: any, res: any) => {

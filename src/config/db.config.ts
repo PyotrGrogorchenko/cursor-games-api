@@ -4,9 +4,9 @@ const sequelizeOptions: SequelizeOptions = {
   port: 5432,
   dialect: 'postgres',
   dialectOptions: {
-    ssl: {
-      rejectUnauthorized: false
-    }
+    // ssl: {
+    //   rejectUnauthorized: false
+    // }
   },
   pool: {
     max: 5,
