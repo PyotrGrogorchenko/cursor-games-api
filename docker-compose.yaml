@@ -12,7 +12,7 @@ services:
     volumes:
       - .:/app
     restart: always
-    env_file: .env
+    # env_file: .env
     environment:
       NODE_ENV: development
       DATABASE_URL: postgres://admin:qwerty@db/games
@@ -30,7 +30,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data/
     restart: always
-    env_file: .env
+    # env_file: .env
     networks:
       - main
 
