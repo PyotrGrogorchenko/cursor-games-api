@@ -1,5 +1,6 @@
 import { Sequelize, SequelizeOptions } from 'sequelize-typescript'
 
+
 const sequelizeOptions: SequelizeOptions = {
   port: 5432,
   dialect: 'postgres',
