@@ -4,8 +4,8 @@
   "description": "cursor-games api",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts",
-    "prod": "rm -rf dist && tsc && node dist/index.js",
+    "dev": "NODE_ENV=development nodemon src/index.ts",
+    "prod": "NODE_ENV=production rm -rf dist && tsc && node dist/index.js",
     "lint": "eslint ."
   },
   "author": "PyotrGrogorchenko",
