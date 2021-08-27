@@ -4,7 +4,7 @@ services:
   
   app:
     container_name: api
-    image: pepegrigorchenko/cursor-games-api
+    # image: pepegrigorchenko/cursor-games-api
     build:
       context: https://github.com/PyotrGrogorchenko/cursor-games-api.git#main:.
       #context: .
