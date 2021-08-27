@@ -6,7 +6,7 @@ services:
     container_name: api
     image: pepegrigorchenko/cursor-games-api
     build:
-      context: https://github.com/PyotrGrogorchenko/cursor-games-api.git#main:docker/dev
+      context: https://github.com/PyotrGrogorchenko/cursor-games-api.git#main:docker
       #context: .
       #dockerfile: ./Dockerfile.dev
     ports:
@@ -36,4 +36,4 @@ volumes:
   db-data:      
 networks:
   main:
-    driver: bridge   
+    driver: bridge  
