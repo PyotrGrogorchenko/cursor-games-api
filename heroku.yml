@@ -1,6 +1,6 @@
 build:
   docker:
-    app: Dockerfile
+    web: Dockerfile
     #api: api/Dockerfile
     # worker: worker/Dockerfile
     #config:
