@@ -3,7 +3,7 @@ import { userIsAuth, createBadResponse, ErrorName } from './utils/helpers'
 import { db } from '../models/index'
 import { scoreSaveDataRules } from './utils/requestDataVaidators'
 
-const { Score } = db
+const { Scores } = db
 
 export const save = async (req: any, res: any) => {
   try {
@@ -28,7 +28,7 @@ export const save = async (req: any, res: any) => {
 
     const { gameId, score } = req.body
 
-    const [scoreItem, created] = await Score.findOrCreate({
+    const [scoreItem, created] = await Scores.findOrCreate({
       where: {
         userId: authorization,
         gameId
@@ -66,7 +66,7 @@ export const get = async (req: any, res: any) => {
 
     const { gameId } = req.params
 
-    const scoreItem = await Score.findOne({
+    const scoreItem = await Scores.findOne({
       where: {
         userId: authorization,
         gameId

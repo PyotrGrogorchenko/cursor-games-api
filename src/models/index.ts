@@ -7,8 +7,8 @@ export const db = {
   sequelize,
   Users: userTable(sequelize),
   Tokens: tokenTable(sequelize),
-  Score: scoreTable(sequelize)
+  Scores: scoreTable(sequelize)
 }
 
 db.Users.hasMany(db.Tokens)
-db.Users.hasMany(db.Score)
+db.Users.hasMany(db.Scores)

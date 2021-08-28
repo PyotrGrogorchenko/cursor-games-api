@@ -22,7 +22,7 @@ export enum ErrorName {
   FORBIDDEN = 'Access denied',
   USER_NOT_CREATED = 'User not created',
   TOKEN_NOT_CREATED = 'Token not created',
-  CATCH_ERROR = 'Catch error',
+  CATCH_ERROR = 'Something went wrong',
   DISPLAY_NAME_MUST_BE_STRING = 'Display name must be string'
 }
 
