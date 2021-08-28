@@ -7,8 +7,7 @@ const { Scores } = db
 
 export const save = async (req: any, res: any) => {
   try {
-    const { authorization } = req.headers
-    const userId = await getUserId(authorization)
+    const userId = await getUserId(req.headers.authorization)
 
     if (!userId) {
       res.status(401).send(
@@ -30,7 +29,7 @@ export const save = async (req: any, res: any) => {
 
     const [scoreItem, created] = await Scores.findOrCreate({
       where: {
-        userId: authorization,
+        userId,
         gameId
       },
       defaults: {
@@ -54,8 +53,7 @@ export const save = async (req: any, res: any) => {
 
 export const get = async (req: any, res: any) => {
   try {
-    const { authorization } = req.headers
-    const userId = await getUserId(authorization)
+    const userId = await getUserId(req.headers.authorization)
 
     if (!userId) {
       res.status(401).send(
@@ -67,10 +65,7 @@ export const get = async (req: any, res: any) => {
     const { gameId } = req.params
 
     const scoreItem = await Scores.findOne({
-      where: {
-        userId: authorization,
-        gameId
-      }
+      where: { userId, gameId }
     })
 
     // @ts-ignore
