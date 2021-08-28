@@ -1,14 +1,14 @@
 import { ReqUserCreate } from 'src/types'
-import { userIsAuth, createBadResponse, ErrorName } from './utils/helpers'
+import { getUserId, createBadResponse, ErrorName } from './utils/helpers'
 import { db } from '../models/index'
 
 const { Users, Tokens } = db
 
 export const create = async (req: ReqUserCreate, res: any) => {
   try {
-    const isAuth = await userIsAuth(req.headers.authorization)
+    const userId = await getUserId(req.headers.authorization)
 
-    if (isAuth) {
+    if (userId) {
       res.status(409).send(createBadResponse(ErrorName.AUTH_CONFLICT))
       return
     }

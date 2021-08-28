@@ -1,5 +1,5 @@
 import Validator from 'validatorjs'
-import { userIsAuth, createBadResponse, ErrorName } from './utils/helpers'
+import { getUserId, createBadResponse, ErrorName } from './utils/helpers'
 import { db } from '../models/index'
 import { scoreSaveDataRules } from './utils/requestDataVaidators'
 
@@ -8,9 +8,9 @@ const { Scores } = db
 export const save = async (req: any, res: any) => {
   try {
     const { authorization } = req.headers
-    const isAuth = await userIsAuth(authorization)
+    const userId = await getUserId(authorization)
 
-    if (!isAuth) {
+    if (!userId) {
       res.status(401).send(
         createBadResponse(ErrorName.UNAUTHORIZED)
       )
@@ -55,9 +55,9 @@ export const save = async (req: any, res: any) => {
 export const get = async (req: any, res: any) => {
   try {
     const { authorization } = req.headers
-    const isAuth = await userIsAuth(authorization)
+    const userId = await getUserId(authorization)
 
-    if (!isAuth) {
+    if (!userId) {
       res.status(401).send(
         createBadResponse(ErrorName.UNAUTHORIZED)
       )
