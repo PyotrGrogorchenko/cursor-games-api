@@ -19,7 +19,6 @@ services:
   
   db:
     container_name: api_db
-    hostname: api_db
     image: postgres:13.3-alpine
     environment:
       POSTGRES_USER: admin

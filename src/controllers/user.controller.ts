@@ -50,7 +50,7 @@ export const create = async (req: ReqUserCreate, res: any) => {
     res.status(201).send(newUser)
   } catch (err) {
     res.status(500).send(
-      createBadResponse(ErrorName.CATCH_ERROR)
+      createBadResponse(ErrorName.CATCH_ERROR, err)
     )
   }
 }

@@ -27,6 +27,6 @@ export enum ErrorName {
   DISPLAY_NAME_MUST_BE_STRING = 'Display name must be string'
 }
 
-export const createBadResponse = (errorName: ErrorName) => ({
-  message: errorName
+export const createBadResponse = (errorName: ErrorName, err: any = '') => ({
+  message: errorName.concat(err ? ` Error: ${err}` : '')
 })
