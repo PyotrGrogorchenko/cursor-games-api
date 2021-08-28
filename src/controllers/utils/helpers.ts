@@ -2,14 +2,24 @@ import { db } from '../../models/index'
 
 const { Tokens } = db
 
-export const userIsAuth = async (token: any) => {
-  const status = Tokens.findOne({ where: { token } })
-    .then((data: any) => (data !== null ? data.id : false))
-    .catch((err: { message: any }) => {
-      // eslint-disable-next-line no-console
-      console.log(err)
-    })
-  return await status
+export const userIsAuth = async (token: string) => {
+  try {
+    const tokenItem = await Tokens.findOne({ where: { token } })
+    console.log('tokenItem', tokenItem)
+    return 0
+    // return tokenItem ? tokenItem.userId : 0
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.log(err)
+    return 0
+  }
+
+  // const status = Tokens.findOne({ where: { token } })
+  //   .then((data: any) => (data !== null ? data.id : false))
+  //   .catch((err: { message: any }) => {
+  //     // eslint-disable-next-line no-console
+  //     console.log(err)
+  //   })
 }
 
 export enum ErrorName {
