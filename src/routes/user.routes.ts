@@ -1,8 +1,8 @@
 import { Router, Express } from 'express'
 import { create } from '../controllers/user.controller'
 
-export const usersRoutes = (app: Express) => {
+export const userRoutes = (app: Express) => {
   const router = Router()
   router.post('/', create)
-  app.use('/api/users', router)
+  app.use('/api/user', router)
 }

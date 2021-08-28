@@ -4,7 +4,7 @@ import cors, { CorsOptions } from 'cors'
 import express from 'express'
 import { db } from './models/index'
 import { scoreRoutes } from './routes/score.routes'
-import { usersRoutes } from './routes/users.routes'
+import { userRoutes } from './routes/user.routes'
 
 export const app = express()
 
@@ -26,7 +26,7 @@ app.get('/', (req: any, res: any) => {
   res.json({ message: 'Welcome to cursor-games api' })
 })
 
-usersRoutes(app)
+userRoutes(app)
 scoreRoutes(app)
 
 const PORT = process.env.PORT || 8000
