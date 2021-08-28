@@ -37,13 +37,14 @@ export const save = async (req: any, res: any) => {
       }
     })
 
-    if (!created) {
+    if (created) {
+      res.status(201).send()
+    } else {
+      res.status(200).send()
       // @ts-ignore
       scoreItem.score = score
       await scoreItem.save()
     }
-
-    res.status(201).send()
   } catch (err) {
     res.status(500).send(
       createBadResponse(ErrorName.CATCH_ERROR, err)
