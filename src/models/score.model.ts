@@ -5,7 +5,6 @@ export const scoreTable = (sequelize: SequelizeType) => {
   const Score = sequelize.define('score', {
     gameId: {
       type: Sequelize.STRING,
-      unique: true,
       allowNull: false
     },
     userId: {
