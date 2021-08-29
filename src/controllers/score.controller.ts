@@ -7,6 +7,7 @@ const { Scores } = db
 
 export const save = async (req: any, res: any) => {
   try {
+    console.log('req.headers.authorization', req.headers.authorization)
     const userId = await getUserId(req.headers.authorization)
 
     if (!userId) {
@@ -40,10 +41,10 @@ export const save = async (req: any, res: any) => {
     if (created) {
       res.status(201).send()
     } else {
-      res.status(200).send()
       // @ts-ignore
       scoreItem.score = score
       await scoreItem.save()
+      res.status(200).send()
     }
   } catch (err) {
     res.status(500).send(
