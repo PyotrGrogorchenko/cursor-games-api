@@ -1,13 +1,12 @@
 import Validator from 'validatorjs'
 import { getUserId, createBadResponse, ErrorName } from './utils/helpers'
-import { db } from '../models/index'
+import { db } from '../../../models/index'
 import { scoreSaveDataRules } from './utils/requestDataVaidators'
 
 const { Scores } = db
 
 export const save = async (req: any, res: any) => {
   try {
-    console.log('req.headers.authorization', req.headers.authorization)
     const userId = await getUserId(req.headers.authorization)
 
     if (!userId) {

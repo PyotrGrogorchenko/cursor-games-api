@@ -2,9 +2,11 @@
 import 'colors'
 import cors, { CorsOptions } from 'cors'
 import express from 'express'
+import swaggerUi from 'swagger-ui-express'
+import swaggerJsdoc, { Options } from 'swagger-jsdoc'
 import { db } from './models/index'
-import { scoreRoutes } from './routes/score.routes'
-import { userRoutes } from './routes/user.routes'
+import { scoreRoutes } from './api/v1/routes/score.routes'
+import { userRoutes } from './api/v1/routes/user.routes'
 
 export const app = express()
 
@@ -12,8 +14,34 @@ const corsOptions: CorsOptions = {
   origin: '*',
   credentials: true
 }
-
 app.use(cors(corsOptions))
+
+const swaggerOptions: Options = {
+  openapi: '3.0.0',
+  definition: {
+    info: {
+      title: 'Cursor-games-api',
+      version: '1.0.0',
+      description: 'cursor-games-api'
+    },
+    host: `${process.env.NODE_ENV === 'production' ? 'https://cursor-games-api.herokuapp.com' : 'http://localhost:8000'}/api/`,
+    basePath: 'v1',
+    schemes: ['https', 'http'],
+    tags: [
+      {
+        name: 'User',
+        description: 'User operations'
+      },
+      {
+        name: 'Score',
+        description: 'Score operations'
+      }
+    ]
+  },
+  apis: ['./src/api/v1/routes/*.ts']
+}
+const swaggerSpecs = swaggerJsdoc(swaggerOptions)
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpecs))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())

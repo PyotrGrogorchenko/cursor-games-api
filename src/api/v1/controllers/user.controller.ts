@@ -1,6 +1,6 @@
 import { ReqUserCreate } from 'src/types'
 import { getUserId, createBadResponse, ErrorName } from './utils/helpers'
-import { db } from '../models/index'
+import { db } from '../../../models/index'
 
 const { Users, Tokens } = db
 
@@ -47,7 +47,7 @@ export const create = async (req: ReqUserCreate, res: any) => {
       return
     }
 
-    res.status(201).send(newUser)
+    res.status(201).send()
   } catch (err) {
     res.status(500).send(
       createBadResponse(ErrorName.CATCH_ERROR, err)
