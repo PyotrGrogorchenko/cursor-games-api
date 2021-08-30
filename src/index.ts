@@ -41,7 +41,7 @@ const swaggerOptions: Options = {
   apis: ['./src/api/v1/routes/*.ts']
 }
 const swaggerSpecs = swaggerJsdoc(swaggerOptions)
-app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpecs))
+app.use('/api/v1/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpecs))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
