@@ -11,7 +11,7 @@ Api for [cursor-games-app](https://github.com/PyotrGrogorchenko/cursor-games-app
 ## Project phase
 
 The project in progress.
-In backlog сreating endpoint and tables for [cursor-games-app](https://github.com/PyotrGrogorchenko/cursor-games-app).
+In backlog сreating endpoints and tables for [cursor-games-app](https://github.com/PyotrGrogorchenko/cursor-games-app).
 
 ## Install
 
