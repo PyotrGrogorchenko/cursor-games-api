@@ -2,6 +2,9 @@
 [![app](https://img.shields.io/badge/deploy-passing-green)](https://cursor-games-api.herokuapp.com/)
 [![swagger](https://img.shields.io/badge/docs-swagger-green)](https://cursor-games-api.herokuapp.com/api/v1/swagger/)
 
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png" width=20 height=20 alt="JavaScript"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1024px-Typescript_logo_2020.svg.png" width=20 height=20 alt="TypeScript"/> <img src="https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png" width=26 height=20 alt="docker"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/800px-Postgresql_elephant.svg.png" width=20 height=20 alt="postgresql"/>
+
 ## Description
 
 Api for [cursor-games-app](https://github.com/PyotrGrogorchenko/cursor-games-app)
