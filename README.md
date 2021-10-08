@@ -2,6 +2,8 @@
 [![app](https://img.shields.io/badge/deploy-passing-green)](https://cursor-games-api.herokuapp.com/)
 [![swagger](https://img.shields.io/badge/docs-swagger-green)](https://cursor-games-api.herokuapp.com/api/v1/swagger/)
 
+## Description
+
 Api for [cursor-games-app](https://github.com/PyotrGrogorchenko/cursor-games-app)
 
 ## Install
