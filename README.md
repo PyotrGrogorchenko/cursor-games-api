@@ -19,4 +19,4 @@ swagger - [http://localhost:8000/api/v1/swagger](http://localhost:8000)
 
 ## Credits
 
-* [PyotrGrogorchenko](https://github.com/PyotrGrogorchenko) - Developer
+* [PyotrGrigorchenko](https://github.com/PyotrGrogorchenko) - Developer
